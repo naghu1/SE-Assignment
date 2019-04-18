@@ -132,6 +132,18 @@ namespace WindowsFormsApp1
             textBox5.Text = line;
         }
 
-		
-	}
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog file = new FolderBrowserDialog();
+            if (file.ShowDialog() == DialogResult.OK)
+            {
+                string strfoldername = file.SelectedPath;
+                Calculation calc = new Calculation();
+                calc.calculate(strfoldername);
+
+            }
+
+        }
+    }
+
 	}
